@@ -34,7 +34,7 @@ export default class BenefitsPage extends BasePage {
         super(page);
 
         // Header
-        this.logOutLink = this.page.getByRole('link', { name: 'Log Out' });
+        this.logOutLink = this.page.getByText('Log Out');
 
         // Table
         this.employeesTable = this.page.locator('#employeesTable');
