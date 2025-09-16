@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: npx playwright install --with-deps chromium
     - name: Run Playwright tests
       run: npm run benefits:regression
     - uses: actions/upload-artifact@v4
