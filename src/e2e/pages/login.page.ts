@@ -20,14 +20,8 @@ export default class PaylocityLoginPage extends BasePage {
     //Reusable Login method
     async login(username: string, password: string) {
         await this.page.goto(baseUrl);
-        await this.page.waitForTimeout(3000); // pause for 5 seconds
         await this.usernameInput.fill(username);
         await this.passwordInput.fill(password);
-        await this.page.waitForTimeout(3000); // pause for 5 seconds
         await this.loginButton.click();
-        await this.page.waitForTimeout(3000); // pause for 5 seconds
-        await this.loginButton.click();
-
-
     }
 }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "benefits:regression": "playwright test --config=playwright.config.ts --workers=1 --project=chromium"
+    "benefits:regression": "playwright test --config=playwright.config.ts --workers=1"
   },
   "keywords": [],
   "author": "",
