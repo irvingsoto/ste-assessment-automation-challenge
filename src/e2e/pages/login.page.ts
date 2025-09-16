@@ -23,5 +23,6 @@ export default class PaylocityLoginPage extends BasePage {
         await this.usernameInput.fill(username);
         await this.passwordInput.fill(password);
         await this.loginButton.click();
+        await this.page.waitForTimeout(5000); // pause for 5 seconds
     }
 }

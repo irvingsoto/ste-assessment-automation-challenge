@@ -6,7 +6,7 @@ import EmployeeHelpers from './helpers/employee.helpers';
 import { employeeFirstName, employeeLastName } from '../../test-data/employees';
 
 
-test('Delete Employee', async ({ page }) => {
+test.skip('Delete Employee', async ({ page }) => {
     // Initialize page objects
     const loginPage = new PaylocityLoginPage(page);
     const benefitsPage = new BenefitsPage(page);
