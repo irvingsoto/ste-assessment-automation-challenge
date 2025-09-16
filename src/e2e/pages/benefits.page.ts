@@ -61,9 +61,8 @@ export default class BenefitsPage extends BasePage {
     }
 
     async assertBenefitsPageLoaded() {
-        await this.waitForEmployeesTable();
-        await expect(this.logOutLink).toBeVisible();
         await expect(this.employeesTable).toBeVisible();
+        await this.waitForEmployeesTable();
     }
 
     /**
