@@ -62,13 +62,10 @@ export default class BenefitsPage extends BasePage {
 
     async assertBenefitsPageLoaded() {
 
-        await this.page.waitForURL(/\/Prod\/Benefits\b/, { timeout: 20000 }).catch(() => null);
-        await expect(this.page).toHaveTitle("Log In - Paylocity Benefits Dashboard", { timeout: 20000 });
-
-        await this.addEmployeeBtn.waitFor({ state: 'visible', timeout: 15000 });
-        await expect(this.logOutLink).toBeVisible({ timeout: 15000 });
+        await this.page.waitForURL(/\/Prod\/Benefits\b/, { timeout: 5000 }).catch(() => null);
+        await expect(this.page).toHaveTitle("Employees - Paylocity Benefits Dashboard");
+        await expect(this.logOutLink).toBeVisible({ timeout: 5000 });
         await expect(this.employeesTable).toBeVisible();
-
 
         await this.waitForEmployeesTable();
     }
