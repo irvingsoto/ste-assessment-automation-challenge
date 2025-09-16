@@ -12,6 +12,7 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     env:
+      BASE_URL: https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/Account/Login
       USER_NAME: ${{ secrets.USER_NAME }}
       PASSWORD: ${{ secrets.PASSWORD }}
     steps:
