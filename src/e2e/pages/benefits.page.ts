@@ -61,12 +61,9 @@ export default class BenefitsPage extends BasePage {
     }
 
     async assertBenefitsPageLoaded() {
-
-        await this.page.waitForURL(/\/Prod\/Benefits\b/, { timeout: 5000 }).catch(() => null);
-        await expect(this.page).toHaveTitle("Employees - Paylocity Benefits Dashboard");
-        await expect(this.logOutLink).toBeVisible({ timeout: 5000 });
-        await expect(this.employeesTable).toBeVisible();
-
+        await expect(this.page, "User is not able to login").toHaveTitle("Employees - Paylocity Benefits Dashboard");
+        await expect(this.logOutLink, "User is not logged in correctly",).toBeVisible();
+        await expect(this.employeesTable, "Employee table is not loading correctly").toBeVisible();
         await this.waitForEmployeesTable();
     }
 
@@ -75,6 +72,6 @@ export default class BenefitsPage extends BasePage {
   */
     async waitForEmployeesTable(): Promise<void> {
         await expect(
-            this.tableBody.locator('tr').first()).toBeVisible({ timeout: 50000 });
+            this.tableBody.locator('tr').first()).toBeVisible({ timeout: 5000 });
     }
 }
