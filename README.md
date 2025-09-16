@@ -63,13 +63,13 @@ npx playwright show-report
 
 This project is integrated with GitHub Actions.
 You can run the Playwright test suite on demand from the GitHub UI.
-
+```
 Steps:
 	1.	Go to the Actions tab in your GitHub repository.
 	2.	Select Playwright Tests workflow.
 	3.	Click Run workflow → choose the branch → press Run.
 	4.	Once finished, download the Playwright report artifact from the workflow summary.
-
+```
 ⸻
 
 📂 Project Structure
