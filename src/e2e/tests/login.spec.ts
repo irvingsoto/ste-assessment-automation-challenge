@@ -1,4 +1,3 @@
-// tests/paylocity-login.spec.ts
 import { test, expect } from '@playwright/test';
 import PaylocityLoginPage from '../pages/login.page';
 import BenefitsPage from '../pages/benefits.page';

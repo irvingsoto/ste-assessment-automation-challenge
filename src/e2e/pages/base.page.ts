@@ -17,12 +17,6 @@ export abstract class BasePage {
         this.page = page;
     }
 
-    /**
-     * Navigate to a given path relative to the configured baseURL.
-     * @param path
-     * @example
-     * await this.goto('/Benefits');
-     */
     async goto(path: string): Promise<void> {
         await this.page.goto(path);
     }
