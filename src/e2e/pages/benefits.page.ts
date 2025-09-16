@@ -40,7 +40,7 @@ export default class BenefitsPage extends BasePage {
         this.employeesTable = this.page.locator('#employeesTable');
         this.tableBody = this.employeesTable.locator('tbody');
         this.deleteEmployeeBtn = this.page.locator('.fa-times').first();
-        this.updateEmployeeBtn = this.page.locator('.fa-edit').first();        
+        this.updateEmployeeBtn = this.page.locator('.fa-edit').first();
         this.addEmployeeBtn = this.page.getByRole('button', { name: 'Add Employee' }).or(this.page.locator('#add'));
 
         // Employee modal
@@ -61,7 +61,15 @@ export default class BenefitsPage extends BasePage {
     }
 
     async assertBenefitsPageLoaded() {
+
+        await this.page.waitForURL(/\/Prod\/Benefits\b/, { timeout: 20000 }).catch(() => null);
+        await expect(this.page).toHaveTitle(/Employees - Paylocity Benefits Dashboard/i, { timeout: 20000 });
+
+        await this.addEmployeeBtn.waitFor({ state: 'visible', timeout: 15000 });
+        await expect(this.logOutLink).toBeVisible({ timeout: 15000 });
         await expect(this.employeesTable).toBeVisible();
+
+
         await this.waitForEmployeesTable();
     }
 
